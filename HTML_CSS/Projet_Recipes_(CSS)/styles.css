@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fcf8f2;
+    color: #333333;
+}
+
+a {
+    color: #e74c3c;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.presentation {
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+}
+
+h1 {
+    color: #c0392b;
+}
+
+h2 {
+    color: #c0392b;
+    border-bottom: 2px solid #c0392b;
+}
+
+h3 {
+    color: #e67e22;
+    text-decoration: underline;
+
+}
+
+.recette {
+    text-align: center;
+}

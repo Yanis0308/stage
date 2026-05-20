@@ -12,6 +12,12 @@ a:hover {
     text-decoration: underline;
 }
 
+.recette {
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+}
+
 .presentation {
     text-align: center;
     background-color: #ffffff;
@@ -20,6 +26,7 @@ a:hover {
 
 h1 {
     color: #c0392b;
+    margin: 20px;
 }
 
 h2 {
@@ -33,6 +40,4 @@ h3 {
 
 }
 
-.recette {
-    text-align: center;
-}
+

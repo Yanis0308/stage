@@ -36,7 +36,7 @@ header nav a {
     justify-content: center;
 }
 
-button {
+.button {
   color: white;
   background-color: #3882f6;
   border: 0px;
@@ -85,6 +85,7 @@ button {
     margin: 0;
     font-size: 14px;
     color: #4b5563;
+    margin-bottom: 70px;
 }
 
 .cards-container {
@@ -93,3 +94,94 @@ button {
     gap: 20px;
     padding: 20px 0px;
 }
+
+.messages {
+    background-color: #bbbbbb;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.author {
+    font-size: 20px;
+    color: #1f2937;
+    display: flex;
+    text-align: justify;
+    justify-content: end;
+}           
+
+.message {
+    font-size: 32px;           
+    font-style: italic;      
+    color: #1f2937;           
+    font-weight: 300;          
+    line-height: 1.4;
+    text-align: justify;
+}
+
+.citation {
+    max-width: 800px;    
+    display: flex;
+    flex-direction: column;
+}
+
+.fin {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.carrebleu {
+    width: 1000px;       
+    height: 150px;       
+    border: 4px solid #3882f6;
+    border-radius: 15px;   
+    background-color: #3888f6; 
+    margin-bottom: 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.zone {
+    width: 100%;
+    max-width: 900px; 
+    display: flex;
+    
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;            
+}
+
+.texte {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 5px; 
+}
+
+.texte h3, .texte p {
+    margin: 0;
+}
+
+.bouton {
+    color: white;
+    background-color: #3882f6;
+    border: 2px solid white;
+    border-radius: 5px; 
+    height: 35px;
+    width: 100px;
+}
+
+.footer {
+    background-color: #1f2937;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+}
+ 

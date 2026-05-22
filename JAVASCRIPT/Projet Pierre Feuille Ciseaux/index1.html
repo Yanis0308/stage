@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pierre - Feuille - Ciseaux</title>
+    <style>
+        /* --- LE STYLE CSS --- */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .game-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .choices {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            font-size: 1.1rem;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .scoreboard {
+            display: flex;
+            justify-content: space-around;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .results p {
+            font-size: 1rem;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        #message-final {
+            margin-top: 20px;
+            color: #222;
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>Pierre, Feuille, Ciseaux</h1>
+        
+        <div class="choices">
+            <button class="btn" id="pierre">🪨 Pierre</button>
+            <button class="btn" id="feuille">📄 Feuille</button>
+            <button class="btn" id="ciseaux">✂️ Ciseaux</button>
+        </div>
+
+        <div class="scoreboard">
+            <p>Joueur : <span id="score-joueur">0</span></p>
+            <p>Ordinateur : <span id="score-ordi">0</span></p>
+        </div>
+
+        <div class="results">
+            <p id="choix-joueur">Votre choix : -</p>
+            <p id="choix-ordi">Choix de l'ordi : -</p>
+            <h2 id="message-final">Choisissez un coup pour commencer !</h2>
+        </div>
+    </div>
+
+    <script>
+        // Sélection des éléments HTML
+        const boutons = document.querySelectorAll('.btn');
+        const txtChoixJoueur = document.getElementById('choix-joueur');
+        const txtChoixOrdi = document.getElementById('choix-ordi');
+        const txtMessageFinal = document.getElementById('message-final');
+        const txtScoreJoueur = document.getElementById('score-joueur');
+        const txtScoreOrdi = document.getElementById('score-ordi');
+
+        // Initialisation des scores
+        let scoreJoueur = 0;
+        let scoreOrdi = 0;
+
+        // Tableau des choix possibles
+        const choixPossibles = ['pierre', 'feuille', 'ciseaux'];
+
+        // Émoticons pour l'affichage
+        const emojis = {
+            pierre: 'a Pierre',
+            feuille: '📄 Feuille',
+            ciseaux: '✂️ Ciseaux'
+        };
+
+        // Écouteur d'événement sur chaque bouton
+        boutons.forEach(bouton => {
+            bouton.addEventListener('click', () => {
+                const choixJoueur = bouton.id;
+                jouer(choixJoueur);
+            });
+        });
+
+        // Fonction principale du jeu
+        function jouer(choixJoueur) {
+            // Choix aléatoire de l'ordinateur
+            const indexAleatoire = Math.floor(Math.random() * 3);
+            const choixOrdi = choixPossibles[indexAleatoire];
+
+            // Affichage des choix à l'écran
+            txtChoixJoueur.textContent = `Votre choix : ${emojis[choixJoueur]}`;
+            txtChoixOrdi.textContent = `Choix de l'ordi : ${emojis[choixOrdi]}`;
+
+            // Vérification du résultat
+            if (choixJoueur === choixOrdi) {
+                txtMessageFinal.textContent = "Égalité ! 🤝";
+                txtMessageFinal.style.color = "#6c757d"; // Gris
+            } 
+            else if (
+                (choixJoueur === 'pierre' && choixOrdi === 'ciseaux') ||
+                (choixJoueur === 'feuille' && choixOrdi === 'pierre') ||
+                (choixJoueur === 'ciseaux' && choixOrdi === 'feuille')
+            ) {
+                txtMessageFinal.textContent = "Vous avez gagné ! 🎉";
+                txtMessageFinal.style.color = "#28a745"; // Vert
+                scoreJoueur++;
+                txtScoreJoueur.textContent = scoreJoueur;
+            } 
+            else {
+                txtMessageFinal.textContent = "L'ordinateur a gagné ! 🤖";
+                txtMessageFinal.style.color = "#dc3545"; // Rouge
+                scoreOrdi++;
+                txtScoreOrdi.textContent = scoreOrdi;
+            }
+        }
+    </script>
+</body>
+</html>

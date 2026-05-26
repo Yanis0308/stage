@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding-top: 20px;
+}
+
+#statut {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    height: 30px;
+}
+
+#plateau {
+    width: 480px;
+    height: 480px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    border: 4px solid #333;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.case {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.blanche {
+    background-color: #f0d9b5;
+}
+
+.noire {
+    background-color: #b58863;
+}
+
+.selectionnee {
+    background-color: #7ab873 !important;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Style de la Pop-up de fin de partie */
+#boite-fin {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.contenu-boite {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.contenu-boite h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.boutons-fin button {
+    margin: 0 10px;
+    padding: 10px 25px;
+}
+
+#btn-rejouer {
+    background-color: #28a745;
+}
+
+#btn-rejouer:hover {
+    background-color: #218838;
+}
+
+.cache {
+    display: none !important;
+}

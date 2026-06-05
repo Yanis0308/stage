@@ -3,6 +3,10 @@ const boutonTaille = document.getElementById('taille');
 const paletteCouleur = document.getElementById('couleur');
 const boutonEffacer = document.getElementById('effacer');
 
+let clicAppuye = false;
+window.addEventListener('mousedown', () => clicAppuye = true);
+window.addEventListener('mouseup', () => clicAppuye = false);
+
 function creerGrille(taille) {
     conteneur.innerHTML = ''; 
     
@@ -14,8 +18,15 @@ function creerGrille(taille) {
         square.style.width = `${taillePixel}px`;
         square.style.height = `${taillePixel}px`;
 
+        square.addEventListener('mousedown', (e) => {
+            if (e.button === 0) {
+                square.style.backgroundColor = paletteCouleur.value;
+            }
+        });
         square.addEventListener('mouseenter', () => {
-            square.style.backgroundColor = paletteCouleur.value; 
+            if (clicAppuye) {
+                square.style.backgroundColor = paletteCouleur.value; 
+            }
         });
 
         conteneur.appendChild(square);

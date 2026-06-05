@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Calculatrice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calculatrice">
+        <h3>Ma Calculatrice</h3>
+        
+        <div id="ecran">0</div>
+        
+        <div class="touches">
+            <button onclick="chiffre('7')">7</button>
+            <button onclick="chiffre('8')">8</button>
+            <button onclick="chiffre('9')">9</button>
+            <button onclick="signe('/')">/</button>
+
+            <button onclick="chiffre('4')">4</button>
+            <button onclick="chiffre('5')">5</button>
+            <button onclick="chiffre('6')">6</button>
+            <button onclick="signe('*')">*</button>
+
+            <button onclick="chiffre('1')">1</button>
+            <button onclick="chiffre('2')">2</button>
+            <button onclick="chiffre('3')">3</button>
+            <button onclick="signe('-')">-</button>
+
+            <button onclick="chiffre('0')">0</button>
+            <button onclick="effacer()" class="btn-clear">C</button>
+            <button onclick="egal()" class="btn-egal">=</button>
+            <button onclick="signe('+')">+</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

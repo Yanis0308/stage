@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.calculatrice {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 240px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#ecran {
+    background-color: #cbd8ce;
+    border: 1px solid #5a7a6f;
+    font-family: monospace;
+    font-size: 20px;
+    padding: 12px;
+    margin-bottom: 15px;
+    text-align: right;
+    border-radius: 4px;
+    min-height: 24px;
+}
+
+/* Grille pour aligner proprement les boutons */
+.touches {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+button {
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+
+button:active {
+    background-color: #e0e0e0;
+}
+
+.btn-clear {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-egal {
+    background-color: #2ecc71;
+    color: white;
+}

@@ -48,3 +48,4 @@ function effacer() {
     deuxiemeNombre = "";
     ecran.innerText = "0";
 }
+
